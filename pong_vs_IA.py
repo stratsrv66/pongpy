@@ -11,7 +11,7 @@ scoreA = 0
 scoreB = 0
 iaCount = 0
 # Le nombre de frame que le bot doit attendre avant de ce deplacer
-iaMaxCount = 1
+iaMaxCount = 0
 # La distance que les pads parcourent quand ils se deplacent
 paddle_move = 20
 
@@ -166,7 +166,7 @@ while True:
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
-        ball.dx *= -1
+        ball.dx = (120 * random.choice(dcs) / fps) * 1.85
         scoreB += 1
         writeScore()
 
@@ -186,18 +186,18 @@ while True:
 
     if ball.xcor() > 390:
         ball.goto(0, 0)
-        ball.dx *= -1
+        ball.dx = (120 * random.choice(dcs) / fps) * 1.85
         scoreA += 1
         writeScore()
 
     # Gestion des collisions entre les pads et la balle
     if ball.xcor() > 340 < 345 and (paddle_b.ycor() + 50 > ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(339)
-        ball.dx *= -1
+        ball.dx *= -1.05
 
     if ball.xcor() < -340 > -345 and (paddle_a.ycor() + 50 > ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-339)
-        ball.dx *= -1
+        ball.dx *= -1.05
 
     # Logs
     print(f"Paddle A: X: {paddle_a.xcor()} Y: {paddle_a.ycor()}")

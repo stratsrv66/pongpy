@@ -1,4 +1,3 @@
-import sys
 import turtle
 import time
 import os
@@ -16,7 +15,6 @@ textExit = "Sortir"
 # Object avec "x" position de la séléction du joueur
 # et passB la variable pour savoir si le jeu continue ou pas
 class Pos:
-
     x = 0
     passB = True
 
@@ -123,6 +121,7 @@ def Switch2():
     co = pos.getX(pos) - 1
     if co >= -2:
         pos.setX(pos, pos.getX(pos) - 1)
+
 
 def Enter():
     co = pos.getX(pos)

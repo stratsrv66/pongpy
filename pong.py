@@ -5,8 +5,11 @@ import turtle
 # Defninition des parametres du jeu
 # ===================START================== #
 
+# Vitesse d'actualisation de la fenetre
 fps = 60
+# Oui
 time_delta = 1. / fps
+# Score des joueurs
 scoreA = 0
 scoreB = 0
 # La distance que les pads parcourent quand ils se deplacent
@@ -17,6 +20,9 @@ paddle_move = 20
 # Création de la fenetre de jeu
 # ===================START================== #
 
+# L'object qui nous permet de récupérer de manière adéquate les fonction et les paramètres de la fenetre qui condiendra
+# nos elements qui nous permmetron de jouer au jeu videal nommé "pong" qui a été créer en 1972 Atari qui est une célèbre
+# société de jeu vidéo Plus précisement
 wn = turtle.Screen()
 wn.title("Pong")
 wn.bgcolor("black")
@@ -179,11 +185,11 @@ while True:
     # Gestion des collisions entre les pads et la balle
     if ball.xcor() > 340 < 345 and (paddle_b.ycor() + 50 > ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(339)
-        ball.dx *= -1
+        ball.dx *= -1.1
 
     if ball.xcor() < -340 > -345 and (paddle_a.ycor() + 50 > ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-339)
-        ball.dx *= -1
+        ball.dx *= -1.1
 
     # Logs
     print(f"Paddle A: X: {paddle_a.xcor()} Y: {paddle_a.ycor()}")
